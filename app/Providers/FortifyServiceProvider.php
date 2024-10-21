@@ -13,6 +13,11 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 
+// use Illuminate\Support\Facades\Redirect;
+// use Illuminate\Auth\Events\Registered;
+// use Illuminate\Support\Facades\Event;
+
+
 class FortifyServiceProvider extends ServiceProvider
 {
     /**
@@ -46,5 +51,9 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('pages.auth.auth-login');
         });
+        Fortify::registerView(function () {
+            return view('pages.auth.auth-register');
+        });
+
     }
 }
